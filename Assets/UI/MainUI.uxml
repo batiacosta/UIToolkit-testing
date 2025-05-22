@@ -19,7 +19,7 @@
             <ui:VisualElement name="BottomSheet" class="bottomSheet">
                 <ui:Label text="Omnes" name="Title" class="text-title" />
                 <ui:VisualElement name="LadyImage" class="ladyImage" />
-                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique tortor ac nibh ultrices ullamcorper." name="pharagraph" class="text-pharagraph" />
+                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique tortor ac nibh ultrices ullamcorper." name="TypedMessage" class="text-pharagraph" />
                 <ui:Button name="CloseButton" style="position: absolute; right: 50px; width: 60px; height: 60px; background-color: rgba(253, 253, 253, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-image: url(&quot;project://database/Assets/Sprites/icons8-close-90.png?fileID=2800000&amp;guid=e73ed08f9746c4cd58f851924f3f7352&amp;type=3#icons8-close-90&quot;); -unity-background-image-tint-color: rgb(142, 136, 136);" />
             </ui:VisualElement>
         </ui:VisualElement>

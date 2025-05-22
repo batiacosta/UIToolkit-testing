@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     private VisualElement _scrim;
     private VisualElement _astronaut;
     private VisualElement _lady;
+    private Label _typedLabel;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class UIManager : MonoBehaviour
         _scrim = root.Q<VisualElement>("Scrim");
         _astronaut = root.Q<VisualElement>("Astronaut");
         _lady = root.Q<VisualElement>("LadyImage");
+        _typedLabel = root.Q<Label>("TypedMessage");
         
         _bottomContainer.style.display = DisplayStyle.None;
         _openButton.clicked += OpenButtonClicked;
@@ -49,6 +52,14 @@ public class UIManager : MonoBehaviour
         _scrim.AddToClassList("scrim-fadeIn");
 
         AnimateLadyImage();
+        AnimateTypingLabel();
+    }
+
+    private void AnimateTypingLabel()
+    {
+        string message = "Hola buenas, buenas, esto es un typed text";
+        _typedLabel.text = string.Empty;
+        DOTween.To(() => _typedLabel.text, x => _typedLabel.text = x, message, 2f).SetEase(Ease.Linear);
     }
 
     private void AnimateLadyImage()
