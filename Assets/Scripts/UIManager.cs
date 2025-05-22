@@ -54,12 +54,7 @@ public class UIManager : MonoBehaviour
     private void AnimateLadyImage()
     {
         _lady.ToggleInClassList("lady-up");
-        _lady.RegisterCallback<TransitionEndEvent>(AnimateLadyImage);
-    }
-
-    private void AnimateLadyImage(TransitionEndEvent evt)
-    {
-        AnimateLadyImage();
+        _lady.RegisterCallback<TransitionEndEvent>((_)=> AnimateLadyImage());
     }
 
     private void CloseButtonClicked()
