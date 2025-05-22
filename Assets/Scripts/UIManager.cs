@@ -72,6 +72,13 @@ public class UIManager : MonoBehaviour
     {
         _bottomSheet.RemoveFromClassList("bottomSheet-up");
         _scrim.RemoveFromClassList("scrim-fadeIn");
-        _bottomContainer.style.display = DisplayStyle.None;
+        _bottomSheet.RegisterCallback<TransitionEndEvent>((_) =>
+        {
+            if (!_bottomSheet.ClassListContains("bottomSheet-up"))
+            {
+                _bottomContainer.style.display = DisplayStyle.None;
+            }
+        });
     }
+    
 }
