@@ -103,3 +103,17 @@
 .scrim-fadeIn {
     opacity: 1;
 }
+
+.astronaut {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Sprites/Hyperspace%20-%20Floating.png?fileID=2800000&guid=6e027c87a5d244b31a2bc242673d77b8&type=3#Hyperspace - Floating");
+    width: 100px;
+    height: 730px;
+    max-width: 450px;
+    transition-duration: 2s;
+    transition-timing-function: ease-out-cubic;
+}
+
+.astronaut-OutScreen {
+    translate: -783px -463px;
+}
