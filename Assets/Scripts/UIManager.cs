@@ -17,5 +17,21 @@ public class UIManager : MonoBehaviour
         _closeButton = root.Q<Button>("CloseButton");
         
         _bottomContainer.style.display = DisplayStyle.None;
+        _openButton.clicked += OpenButtonClicked;
+        _closeButton.clicked += CloseButtonClicked;
+    }
+    private void OnDestroy()
+    {
+        _openButton.clicked -= OpenButtonClicked;
+    }
+
+    private void CloseButtonClicked()
+    {
+        _bottomContainer.style.display = DisplayStyle.None;
+    }
+
+    private void OpenButtonClicked()
+    {
+        _bottomContainer.style.display = DisplayStyle.Flex;
     }
 }
