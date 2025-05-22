@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     private VisualElement _bottomSheet;
     private VisualElement _scrim;
     private VisualElement _astronaut;
+    private VisualElement _lady;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
         _bottomSheet = root.Q<VisualElement>("BottomSheet");
         _scrim = root.Q<VisualElement>("Scrim");
         _astronaut = root.Q<VisualElement>("Astronaut");
+        _lady = root.Q<VisualElement>("LadyImage");
         
         _bottomContainer.style.display = DisplayStyle.None;
         _openButton.clicked += OpenButtonClicked;
@@ -31,7 +33,7 @@ public class UIManager : MonoBehaviour
 
     private void AnimateAstroaut()
     {
-        // Debug.Log($"{_astronaut.ClassListContains("astronaut-OutScreen")}");
+        // _astronaut.ClassListContains("astronaut-OutScreen") -> checks whether or not the class exists in the viual element
         _astronaut.RemoveFromClassList("astronaut-OutScreen");
     }
 
@@ -45,7 +47,21 @@ public class UIManager : MonoBehaviour
         _bottomContainer.style.display = DisplayStyle.Flex;
         _bottomSheet.AddToClassList("bottomSheet-up");
         _scrim.AddToClassList("scrim-fadeIn");
+
+        AnimateLadyImage();
     }
+
+    private void AnimateLadyImage()
+    {
+        _lady.ToggleInClassList("lady-up");
+        _lady.RegisterCallback<TransitionEndEvent>(AnimateLadyImage);
+    }
+
+    private void AnimateLadyImage(TransitionEndEvent evt)
+    {
+        AnimateLadyImage();
+    }
+
     private void CloseButtonClicked()
     {
         _bottomSheet.RemoveFromClassList("bottomSheet-up");

@@ -117,3 +117,18 @@
 .astronaut-OutScreen {
     translate: -783px -463px;
 }
+
+.ladyImage {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Sprites/Hyperspace%20-%20TV.png?fileID=2800000&guid=0f2863e069c7741689e4b5aa163503bf&type=3#Hyperspace - TV");
+    width: 400px;
+    height: 500px;
+    max-width: 400px;
+    max-height: 500px;
+    transition-duration: 1.5s;
+}
+
+.lady-up {
+    translate: 0 -50px;
+    transition-timing-function: ease;
+}
